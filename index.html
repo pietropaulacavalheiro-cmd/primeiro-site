@@ -11,3 +11,146 @@ meu blog tech
     
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tecnologia & Programação</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Consolas, monospace;
+}
+
+body{
+    background:#050816;
+    color:#00ffcc;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+.container{
+    width:90%;
+    max-width:800px;
+    background:#0b1120;
+    border:2px solid #00ffcc;
+    border-radius:12px;
+    padding:30px;
+    box-shadow:0 0 25px #00ffcc55;
+}
+
+h1{
+    text-align:center;
+    margin-bottom:20px;
+    color:#00ffff;
+}
+
+.terminal{
+    background:#000;
+    color:#00ff66;
+    padding:20px;
+    border-radius:10px;
+    min-height:220px;
+    overflow:hidden;
+}
+
+.cursor{
+    display:inline-block;
+    width:10px;
+    background:#00ff66;
+    animation:piscar .8s infinite;
+}
+
+@keyframes piscar{
+    50%{
+        opacity:0;
+    }
+}
+
+button{
+    margin-top:20px;
+    width:100%;
+    padding:12px;
+    background:#00ffcc;
+    color:#000;
+    border:none;
+    border-radius:8px;
+    font-size:18px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+button:hover{
+    background:#00ffff;
+    transform:scale(1.03);
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<h1>💻 Tecnologia & Programação</h1>
+
+<div class="terminal" id="terminal"></div>
+
+<button onclick="executar()">
+Executar Código
+</button>
+
+</div>
+
+<script>
+
+const linhas = [
+"> Inicializando sistema...",
+"> Carregando bibliotecas...",
+"> Conectando ao servidor...",
+"> Compilando JavaScript...",
+"> HTML ✔",
+"> CSS ✔",
+"> JavaScript ✔",
+"> Inteligência Artificial ✔",
+"> Sistema Online!"
+];
+
+function executar(){
+
+const terminal = document.getElementById("terminal");
+terminal.innerHTML="";
+
+let i=0;
+
+function escrever(){
+
+if(i<linhas.length){
+
+terminal.innerHTML += linhas[i]+"<br>";
+terminal.scrollTop=terminal.scrollHeight;
+
+i++;
+
+setTimeout(escrever,700);
+
+}else{
+
+terminal.innerHTML += "<br><span style='color:#00ffff;'>Bem-vindo ao mundo da programação!</span>";
+
+}
+
+}
+
+escrever();
+
+}
+
+</script>
+
+</body>
+</html>
